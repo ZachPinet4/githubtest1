@@ -12,7 +12,14 @@ def encode(password):
 
 # This is the decode function.
 def decode(encoded_password):
-    pass
+    password = ''
+    for x in str(encoded_password):
+        x = int(x)
+        x -= 3
+        password += str(x)
+
+    print(f"The encoded password is {encoded_password}, and the original password is {password}")
+    return int(password)
 
 
 # This is the main function for the program.
@@ -32,7 +39,7 @@ def main():
             encoded_password = encode(password)
         elif menu_option == 2:
             password = decode(encoded_password)
-            print(f"The encoded password is {encoded_password}, and the original password is {password}".)
+            print(f"The encoded password is {encoded_password}, and the original password is {password}.")
         else:
             break
 
